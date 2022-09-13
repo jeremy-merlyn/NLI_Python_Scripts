@@ -1,0 +1,12 @@
+# verbs = '(go to|show|switch(( the)? input)? to|display( from)?|share) '
+# switch_display_modifier = '(computer|laptop|chromebook|mac(intosh)?|desktop|PC|second laptop|apple TV|chromecast|screenbeam|wireless casting|airtame|(document )?camera|microscope|HDMI( (1|2))?|TV)'
+# determiners = "((my|the) )?"
+
+S -> SwitchVerb MyThe0 SwitchDisplayModifier
+S -> 'HDMI 1' | 'HDMI 2'
+
+
+# UTILS
+SwitchVerb -> 'go to' | 'show' | 'display' | 'share'
+SwitchDisplayModifier -> 'computer' | 'laptop'| 'chromebook' | 'mac' | 'macintosh' | 'desktop' | 'PC' | 'second laptop' | 'apple TV' | 'chromecast' | 'screenbeam' | 'wireless casting' | 'airtame' | 'document camera' | 'camera' | 'microscope' | 'HDMI' | 'HDMI 1' | 'HDMI 2' | 'TV'
+MyThe0 -> 'my' | 'the' |

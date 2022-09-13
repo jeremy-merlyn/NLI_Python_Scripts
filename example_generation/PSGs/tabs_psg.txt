@@ -1,0 +1,43 @@
+# CLOSE ALL TABS
+S -> CloseShut AllMy 'tabs'
+
+# CLOSE CURRENT TAB
+S -> CloseShut MyTheThis 'tab'
+S -> CloseShut 'current tab'
+S -> CloseShut MyTheThis 'current tab'
+S -> CloseShut 'tab'
+
+# CLOSE FIRST MULTIPLE TABS
+S -> CloseShut MyThe0 'first tab'
+S -> CloseShut MyThe0 'first' Num2-5 'tabs'
+
+# CLOSE LAST MULTIPLE TABS
+S -> CloseShut MyThe0 'last tab'
+S -> CloseShut MyThe0 'last' Num2-5 'tabs'
+
+# CLOSE NAMED TAB
+
+S -> CloseShut BrowserAppName
+S -> CloseShut BrowserAppName 'tab'
+S -> CloseShut MyThe0 'tab' AboutOn TabTopic
+S -> CloseShut MyThe0 TabTopic 'tab'
+# S -> CloseShut MyThe0 'tab' BrowserAppName
+
+
+
+# UTILS
+
+CloseShut -> 'close' | 'shut' | 'exit'
+AllMy -> 'all' | 'my' | 'all my' | 'all of my' | 'all of the' | 'all the'
+
+MyTheThis -> 'my' | 'the' | 'this'
+
+MyThe0 -> 'the' | 'my' | 
+
+Num2-5 -> '2' | '3' | '4' | '5'
+
+BrowserAppName -> 'gmail' | 'newsela' | 'youtube'
+
+AboutOn -> 'about' | 'on'
+
+TabTopic -> 'dinosaurs' | 'politics'

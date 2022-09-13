@@ -1,0 +1,102 @@
+# 1. SET THE VOLUME TO A SPECIFIC LEVEL
+
+# 1A. SET THE VOLUME TO A NUMERIC LEVEL
+S -> 'set' The0 'volume' ToAt Level0 VolumeNumber
+S -> 'turn' The0 'volume' UpDownWord0 'to' Level0 VolumeNumber
+S -> IncreaseDecrease The0 'volume to' Level0 VolumeNumber
+S -> 'volume' ToAt0 Level0 VolumeNumber
+
+# 1B. SET THE VOLUME TO A PERCENT LEVEL
+S -> 'set' The0 'volume' ToAt Percent
+S -> 'turn' The0 'volume' UpDownWord0 'to' Percent
+S -> IncreaseDecrease The0 'volume to' Percent
+S -> 'volume' ToAt0 Percent
+
+# 1C. SET THE VOLUME TO MAX/MIN/ETC LEVEL
+S -> 'set' The0 'volume' ToAt MaxMin
+S -> 'turn' The0 'volume to' MaxMin
+S -> 'volume' MaxMin
+S -> MaxMin 'volume'
+
+# 1D. RESET THE VOLUME LEVEL
+S -> 'reset' The0 'volume'
+
+# 2. CHANGE THE VOLUME BY A SPECIFIED AMOUNT
+
+# 2A. CHANGE THE VOLUME BY A NUMERIC AMOUNT
+S -> 'turn' The0 VolumeWord UpDownWord By0 VolumeNumber
+S -> IncreaseDecrease The0 VolumeWord 'by' VolumeNumber
+S -> VolumeWord UpDownWord By0 VolumeNumber
+S -> 'volume' VolumeNumber 'higher'
+S -> 'volume' VolumeNumber 'lower'
+
+
+# 2B. CHANGE THE VOLUME BY A PERCENTAGE AMOUNT
+S -> 'turn' The0 VolumeWord UpDownWord By0 Percent
+S -> IncreaseDecrease The0 VolumeWord 'by' Percent
+S -> VolumeWord UpDownWord By0 Percent
+S -> 'volume' Percent 'higher'
+S -> 'volume' Percent 'lower'
+# To add: 50% less volume?
+
+# 3. CHANGE THE VOLUME BY AN UNSPECIFIED AMOUNT
+S -> 'turn' UpDownWord The0 VolumeWord
+S -> 'turn' The0 VolumeWord UpDownWord
+S -> IncreaseDecrease The0 VolumeWord
+S -> SpeakTalkRead0 LoudSoftComparativeAdj
+S -> VolumeWord UpDownWord
+S -> MoreLessWord VolumeWord
+S -> 'you are' DegreeModifier0 'too' LoudSoftAdj
+S -> "it's" DegreeModifier0 'too' LoudSoftAdj
+S -> 'make it' DegreeModifier0 LoudSoftComparativeAdj
+S -> 'make the' VolumeWord DegreeModifier0 LoudSoftComparativeAdj
+S -> DegreeModifier0 'too' LoudSoftAdj
+
+# 4. MUTE
+
+# 4A. MUTE VOLUME
+S -> 'mute'
+S -> 'make it mute'
+S -> 'mute' The0 'speaker'
+S -> 'mute' VolumeWord
+S -> 'set' VolumeWord 'to mute'
+S -> VolumeWord 'mute'
+S -> VolumeWord 'off'
+
+# 4B. MUTE THE MIC
+S -> 'mute the microphone'
+S -> 'mute the mic'
+
+# 5. UNMUTE
+S -> 'turn' The0 'sound' Back0 'on' Again0
+S -> 'sound' Back0 'on' Again0
+S -> 'unmute'
+
+
+
+
+
+
+# UTILS
+VolumeWord -> 'volume' | 'sound'
+LoudSoftAdj -> 'loud' | 'soft' | 'quiet'
+LoudSoftComparativeAdj -> 'louder' | 'softer' | 'quieter' | 'lower' | 'higher'
+DegreeModifier0 -> 'a bit' | 'a little' | 'much' |
+MoreLessWord -> 'more' | 'less' 
+UpDownWord -> 'up' | 'down'
+UpDownWord0 -> 'up' | 'down' |
+The0 -> 'the' |
+ToAt -> 'to' | 'at'
+ToAt0 -> 'to' | 'at' |
+Back0 -> 'back' |
+Again0 -> 'again' |
+Level0 -> 'level' |
+By0 -> 'by' |
+SpeakTalkRead0 -> 'speak' | 'talk' | 'read' |
+IncreaseDecrease -> 'increase' | 'decrease' | 'reduce' | 'raise' | 'lower'
+MaxMin -> 'maximum' | 'minimum' | 'max' | 'min'
+
+VolumeNumber -> '1' | '2' | '4' | '9' 
+Percent -> '25%' | '50%' | '75%' | '100%'
+
+SetV -> 'set' | 'turn'

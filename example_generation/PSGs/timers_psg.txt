@@ -1,0 +1,54 @@
+# ESTABLISH
+S -> SetTimerV Det TimerN 'for' Num TimeUnitPl
+S -> SetTimerV A0 Num TimeUnitSg TimerN
+S -> SetAlarmV Det 'alarm for' ClockTime
+S -> Put0 Num TimeUnitPl 'on the' 'timer'
+S -> 'put' Det TimerN 'on for' Num TimeUnitPl
+
+
+# CANCEL
+S -> CancelV The0 TimerN
+S -> TimerN 'off'
+
+
+# PAUSE
+S -> 'pause' The0 'timer'
+
+
+# CONTINUE
+S -> ContinueV The0 'timer'
+
+
+# ADJUST
+S -> 'add' Num More0 TimeUnitPl 'to the' TimerN
+S -> 'take' Num TimeUnitPl 'off the' TimerN
+
+
+# RESTART
+S -> RestartV The0 'timer'
+
+# CHECK
+S -> HowLongPhraseSg IsLeftPhraseSg OnTheTimer0
+S -> HowLongPhrasePl IsLeftPhrasePl OnTheTimer0
+
+
+# UTILS
+More0 -> 'more' |
+CancelV -> 'stop' | 'end' | 'delete' | 'cancel' | 'kill' | 'dismiss' | 'drop'
+SetTimerV -> 'set' | 'start' | 'set up' | 'make' | 'create' | 'begin'
+SetAlarmV -> 'set' | 'set up' | 'make' | 'place' |
+RestartV -> 'restart' | 'renew' | 'redo' | 'restore' | 're-establish' | 'reset'
+The0 -> 'the' |
+Put0 -> 'put' |
+A0 -> 'a' |
+Det -> 'a' | 'the' |
+TimerN -> 'timer' | 'alarm'
+Num -> '2' | '5'
+TimeUnitPl -> 'minutes' | 'seconds' | 'hours'
+TimeUnitSg -> 'minute' | 'second' | 'hour'
+
+HowLongPhraseSg -> 'how long' | 'how much time'
+HowLongPhrasePl -> 'how many' TimeUnitPl
+IsLeftPhraseSg -> 'is left' | 'is remaining' | 'remains' | 'remaining' | 'left' 
+IsLeftPhrasePl -> 'are left' | 'are remaining' | 'remain' | 'remaining' | 'left'
+OnTheTimer0 -> 'on the timer' |

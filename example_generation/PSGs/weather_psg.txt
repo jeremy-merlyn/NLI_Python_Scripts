@@ -1,0 +1,51 @@
+# 1. REQUEST THE WEATHER, optional location
+
+S -> 'weather' LocationPP0
+S -> "what's the weather" LocationPP0
+S -> 'show the weather' LocationPP0
+S -> 'tell me the weather' LocationPP0
+S -> Location 'weather'
+
+# 1. REQUEST SPECIFIC CONDITION, optional date, optional location
+
+S -> 'is it' WeatherAdj InPP0 PresentDate0
+S -> 'is it' WeatherAdj PresentDate0 InPP0 
+S -> 'will it' WeatherVerb InPP0 FutureDate
+S -> 'will it' WeatherVerb FutureDate InPP0
+S -> 'will it be' WeatherAdj InPP0 FutureDate
+S -> 'will it be' WeatherAdj FutureDate InPP0
+S -> 'will there be' WeatherNoun InPP0 FutureDate
+S -> 'will there be' WeatherNoun FutureDate InPP0
+
+# 2. REQUEST FORECAST, option date, optional location
+
+S -> 'forecast for' Location
+S -> "what's the forecast for" Location
+S -> "what's the forecast for" FutureDate
+S -> 'what is' GenitiveDate 'forecast'
+
+
+# UTILS
+
+InPP0 -> 'in' City | 
+LocationPP0 -> InFor Location |
+InFor -> 'in' | 'for'
+Location -> Zipcode | City
+Zipcode -> '20815' | '02138' | '94114'
+City -> 'Chicago' | 'Boston' | 'Moscow'
+
+PresentDate -> 'now' | 'today' 
+PresentDate0 -> 'now' | 'today' |
+FutureDate -> 'tonight' | 'tomorrow' | 'next Tuesday' | 'this weekend' | 'next week'
+FutureDate0 -> 'tonight' | 'tomorrow' | 'next Tuesday' | 'this weekend' | 'next week' |
+Date -> PresentDate | FutureDate
+Date0 -> Date |
+GenitiveDate -> "today's" | "tonight's" | "tomorrow's" | "this weekend's" | "next week's"
+
+WeatherQuery -> 'is it' WeatherAdj | 'will it be' WeatherAdj | 'will it' WeatherVerb | 'will there be' WeatherNoun
+
+
+WeatherAdj -> 'rainy' | 'raining' | 'sunny' | 'snowing' | 'humid' | 'hot' | 'cold' | 'cloudy' | 'windy' | 'freezing'
+WeatherVerb -> 'rain' | 'snow' | 'hail' | 'freeze'
+WeatherNoun -> 'sun' | 'hail' | 'snow' | 'rain' | 'wind'
+
